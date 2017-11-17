@@ -66,27 +66,20 @@ If the chiller is off, then press the buttion and switch it on, wait a couple of
 
 IMPORTANT!!! Every six months the water filter (on the rear side of the chiller) should be replaced on the new one.
 
-\subsection{Mounting the sample}
 
-The structure we wish to study lies on a substrate. Typical examples include a permalloy structure mounted on a silicon substrate, or a GaAs structure mounted on a glass substrate. The structure must first be attached to the printed circuit board ({\it PCB}), and to do this, we simply apply sticky-tape. Wearing latex gloves, and preferably with the help of a magnifying glass/angled lamp, the structure should be laid on top of the signal line of the PCB (the PCB consists of ground(yellow)-signal-ground(yellow) lines. The substrate should also be lying fully on the PCB. Care should be taken to ensure this is done correctly - in my personal experience, it has sometimes taken up to an hour to do this.
-\\
-
-A good way to double-check this step has been done correctly is to take a photo of the sample (where you can see it), and then a second photo of the sample lying on the PCB (scratches on the PCB invariably make the structure on the substrate impossible to discern). Using an application as simple as Microsoft Powerpoint gives us a way to verify that the structure is lying on the signal line (see Figure 2) 
-
-\begin{figure}
-\includegraphics[width=0.8\textwidth]{PCB-Signal-line-Sample-Verification.jpg}
-
-\caption{Using Microsfot Powerpoint, we can verify the sample lies on the signal line. We can see the sample in the left photo, but the scratches on the PCB make the sample invisible to the naked eye in the photo on the right. By making a series of reference points (here, we have used lines surrounding the glass), we can copy and paste this overlaying 'net', therefore showing the position of the sample relative to the PCB}
-\label{overflow}
-\end{figure}
-
-
-With the sample now mounted on the PCB, the PCB can now be dropped on to the piezo-electric stage. After ensuring the magnetic ring is switched off, magnet (1) can be pulled out, breaking the circle. The piezo-electric stage can then be gently pulled towards the space left by magnet (1), and the sample merely dropped in to the slot at the centre of the stage. The two green cables, held in place either side of the stage by two clamps, can then be screwed on to the PCB. These two cables provide the electrical field with which we pump the structure.
 
 
 \section{Setup alignment}
 
 \section{Laser optimization}
+Switch the Thorlabs S142C power meter on, and adjust the meter so that it measures in units of mW, and reads the intensity of 800nm (infrared) light. Place the power meter after beam splitters (see Fig. \ref{fig:optic_outline}) and rotate the meter until the power incident is maximised. 
+Adjust the dials on top of the Tsunami Laser until the power recorded is maximised further (Fig. \ref{fig:laser_walking}). From experience, it is recommended that this step be repeated, as this this often provides a further maximisation. A detailed explanation of optimization process could be found in Tsunami manual (page 7-3). With the power now maximised, the power meter can be removed and put aside.
+
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{Tsunami-Laser-System.jpg}
+\caption{Turn the dials A, B, C and D to maximise the output power.}
+\label{fig:laser_walking}
+\end{figure}
 
 \section{Optical alignment}
 Optical alignment is the most important part of the experimental work and main condition of robust and repeatable measurements.
@@ -100,17 +93,61 @@ General advice:
 \item something else???   
 \end{itemize}
 
+\begin{figure}
+\includegraphics[width = 1\linewidth]{TRSKM-outline.png})
+\caption{Outline of optical part of the TRSKM setup}
+\label{fig:optic_outline} 
+\end{figure}
+
+
+Retroreflector.jpg
+
 \subsection{Delay line}
 Delay line allows one to change length of optical path and introduce time delay between excitation of the investigated sample and moment of measurement.
 
 % Links to a scheme is higly desirable.
 
-Ideally the laser beam goes parallel to the rail of DL, incidents to the corner reflectors and reflects to the rotating mirror. Incident and reflected beams should be exactly parallel to each other. Otherwise, reflected beam walks up-down or left-right with DL movement and alignment of subsequent optical elements is impossible.   
- 
+Ideally the laser beam goes parallel to the rail of DL, incidents to the corner reflectors and reflects to the rotating mirror. Incident and reflected beams should be exactly parallel to each other. Otherwise, reflected beam walks up-down or left-right with DL movement and alignment of subsequent optical elements is impossible (Fig.\ref{fig:DL_sketch}).
+
+\begin{figure}
+\center{
+\includegraphics[width = 0.8\linewidth]{Retroreflector.jpg}}
+\caption{Optical path of the laser beam in aligned (top) and misaligned (bottom) delay line.}
+\label{fig:DL_sketch} 
+\end{figure}
+
+The top sketch corresponds to a good alignment: the stage travel strictly parallel to the directions of the beams (it is the key property of the retro-reflector to send the incident beam exactly in the antiparallel direction), and so, the beam hits exactly the same points of the retroreflector in both positions.
+The bottom sketch illustrates what happens when the beam is slightly deviated from the direction of stage’s travel: the beam hits different points of the retroreflector in its different positions on the translation stage, and as a result, the beam gets translated as the stage travels.
+   
+\begin{figure}
+\begin{minipage}{0.4\linewidth}
+\includegraphics[width = 1\linewidth]{DL-3} \\a) 
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\includegraphics[width = 1\linewidth]{DL-4} \\b) 
+\end{minipage}
+\begin{minipage}{0.6\linewidth}
+\includegraphics[width = 1\linewidth]{DL-5} \\c) 
+\end{minipage}
+\caption{Control panel of delay line.}
+\label{fig:DL2}
+\end{figure}
+
+\begin{figure}
+  \begin{minipage}{0.5\linewidth}
+    \includegraphics[width = 1\linewidth]{DL-1} \\a) 
+  \end{minipage}
+  \begin{minipage}{0.5\linewidth}
+    \includegraphics[width = 1\linewidth]{DL-2} \\b) 
+  \end{minipage}
+  \caption{Delay line: 1 - directing mirror, 2 - rotating mirror, 3- corner retroreflector.}
+  \label{fig:DL}
+\end{figure} 
+  
 \textbf{\underline{How to:}} 
 \begin{enumerate}
-\item Set DL to -300 mm position.
-\item Install a screen before the corner reflector.
+\item Open web-browser, login to the url http://192.168.254.254 and open control panel of the delay line (Fig. \ref{fig:DL2}).
+\item Install a screen before the corner reflector (Fig.  \ref{fig:DL}).
 \item Using the directing mirror send the beam to the screen. The incident point should be over against left half of the reflector.
 \item Remove the screen, install it somewhere near the directing mirror and catch spot of the reflected beam.
 \item Using screws of the directing mirror, adjust position of the spot thus to make incident and reflected beams are roughly parallel.
@@ -132,6 +169,108 @@ Ideally the laser beam goes parallel to the rail of DL, incidents to the corner 
 
 \section{Sample installation}
 
+\subsection{Connection of mechanical stage}
+
+Make sure that the stage can move without any nuisance (otherwise, you will hurt the stage).
+
+NEVER try to move the mechanical stage manually when it is connected and under control.
+
+\begin{enumerate}
+\item Make sure that two controllers of the stage are on.
+\item Run "PIMicroMove" (Fig.\ref{fig:mStage}a)
+\item Choose proper COM port and press "Connect" (Fig.\ref{fig:mStage}b)
+\item You will see type of the connected stage on the left panel. It should be "M-686.164" (Fig.\ref{fig:mStage}c). (If the left panel is empty, select "M-686.164" on the right panel, press "Assign"). Press "OK".
+\item In new window press "Automatic" (Fig.\ref{fig:mStage}e) and  "Start". The stage will be moved in a reference position. Close the window.
+\item Now you see that one axis of the stage is connected.
+\item In main menu open "Conection" -> "New..." and repeat steps 3 - 5 for second axis of the stage (it will be another port address).
+\item As a result, both axis of the stage should be connected and adjusted. You will see two axis in the main window.
+\end{enumerate}
+
+\begin{figure}[pH]
+
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mStage.png}} a)\\
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mStage2.png}} \\b)
+\end{minipage}
+\vfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mStage3.png}} c)\\
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mStage4.png}} d)\\
+\end{minipage}
+\vfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mStage4.png}} e)\\
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mStage5.png}} f)\\
+\end{minipage}
+
+\caption{Connection of the mechanical stage}
+\label{fig:mStage}
+\end{figure}
+
+
+\subsection{Preliminary work}
+
+Make sure that current passing throw the magnet is zero.
+
+Move away one removable magnet pole.
+
+Connect the mechanical stage 
+
+\subsection{Mounting the sample}
+
+Usually the structure we wish to study lies on a substrate. Typical examples include a permalloy structure mounted on a silicon substrate, or a GaAs structure mounted on a glass substrate. The structure must first be attached to the printed circuit board ({\it PCB}), and to do this, we simply apply sticky-tape. Wearing latex gloves, and preferably with the help of a magnifying glass/angled lamp, the structure should be laid on top of the signal line of the PCB (the PCB consists of ground(yellow)-signal-ground(yellow) lines. The substrate should also be lying fully on the PCB. Care should be taken to ensure this is done correctly - in my personal experience, it has sometimes taken up to an hour to do this.
+\\
+
+A good way to double-check this step has been done correctly is to take a photo of the sample (where you can see it), and then a second photo of the sample lying on the PCB (scratches on the PCB invariably make the structure on the substrate impossible to discern). Using an application as simple as Microsoft Powerpoint gives us a way to verify that the structure is lying on the signal line (see Figure 2) 
+
+\begin{figure}
+\includegraphics[width=0.8\textwidth]{PCB-Signal-line-Sample-Verification.jpg}
+
+\caption{Using Microsfot Powerpoint, we can verify the sample lies on the signal line. We can see the sample in the left photo, but the scratches on the PCB make the sample invisible to the naked eye in the photo on the right. By making a series of reference points (here, we have used lines surrounding the glass), we can copy and paste this overlaying 'net', therefore showing the position of the sample relative to the PCB}
+\label{overflow}
+\end{figure}
+
+
+With the sample now mounted on the PCB, the PCB can now be dropped on to the piezo-electric stage. After ensuring the magnetic ring is switched off, magnet (1) can be pulled out, breaking the circle. The piezo-electric stage can then be gently pulled towards the space left by magnet (1), and the sample merely dropped in to the slot at the centre of the stage. The two green cables, held in place either side of the stage by two clamps, can then be screwed on to the PCB. These two cables provide the electrical field with which we pump the structure.
+
+
+\subsection{Positioning the sample/Focussing the laser beam}
+
+%With the laser beam still blocked, the piezo-electric stage can be moved so that the PCB lies directly underneath the objective lens. Open the program "PI Mikromove", and follow these steps:
+
+\begin{enumerate}
+\item Highlight the top option displayed, click 'connect', and then 'ok'
+\item Press 'negative Limit', and then 'start'
+\item Wait a few seconds until the program has finished running, and then press %'close'
+\item In the new window that has opened, open the tab 'connections', and click 'new'
+\item Highlight the remaining axis, and click 'connect'
+\item Click 'ok', press 'negative limit', 'start', wait until the program stops, and then 'close'
+\end{enumerate}
+
+The window that has now opened displays the two axes. Change the step size on both axes to 3mm, and then incrementally move the PCB to 21mm x 21mm. This has centred the PCB.
+
+We also need to centre the objective lens. Open the program 'Measurement \& Automation Explorer', and double-click "devices" on the left panel. Right click 'device 0' or '1', and communicate with the instrument. We want to communicate with GPIB 15. In this panel, type:
+
+\begin{itemize}
+\item Typing '1TP', '2TP' or '3TP' then pressing 'query' returns the position of the PCB in the x-,y- and z- axes.
+\item Typing '1MAxxx', '2MAxxx' or '3MAxxx', where xxx is a co-ordinate in $\mu$m, and pressing 'write' moves the PCB to the appropiate co-ordinate in the x-, y- or z- axes.
+\end{itemize}
+
+Move the objective lens such that it lies directly above the top of the PCB ie. write the commands '1MA150' and '2MA150'.
+
+We now need to focus the sample. Allow the laser beam to enter the TRSKM apparatus, and push the mirror in between the PCB and the objective lens. With your hands below magnet 1 (which is still pulled out of the circle), carefully raise the PCB towards the objective lens using your left hand. Do not push the PCB in any transverse or longitudinal direction. Once the laser beam is reflected on to the piece of card, such that there are 2 dots visible, carefully raise or lower the PCB until the 2nd dot is strongly concentrated, and use your right hand to turn the dial under the PCB to tighten its position. Switch the tv on next to the display monitor, and you should be able to see a rough surface. If not, again raise or lower the sample until you can see the PCB board in focus on the CCTV monitor.
+
+Open the window 'PI Mikromove', and now, in increments of 20$\mu$m, move the piezo-electric stage until the structure can be seen on the CCTV monitor. This is mainly done through trial and error. The CCTV monitor can now be switched off, and the mirror above the PCB can be pulled out. The laser beam is now entering the objective lens, and is being collected by the photodetectors.
+
 \section{Pulse measurement}
 
 \section{CW measurement}
@@ -139,71 +278,33 @@ Ideally the laser beam goes parallel to the rail of DL, incidents to the corner 
 
 \subsection{Configuring the laser}
 
-%The workings of the Tsunami laser system has been described well in the Doctoral Thesis presented by Toby Davison\footnote{url{https://eric.exeter.ac.uk/repository/handle/10036/3675}}. Here, I shall merely describe how to obtain an output laser beam, of wavelength 400nm. The mirror directly in front of the laser aperture should be raised, so as to protect the sample from the laser until it is configured correctly. The console next to the laser should display 'Standby'. This indicates, of course, the laser is on standby. Pressing and holding the upper-left button on the console switches the laser on, and now the power of the laser is displayed (initially this is '<0.1W'). Wait for around 2 minutes, until the laser outputs 12W. This is the maximum power of the laser, and we are now able to see the red laser beam reflected on to the card next to the laser aperture.
+The workings of the Tsunami laser system has been described well in the Doctoral Thesis presented by Toby Davison\footnote{url{https://eric.exeter.ac.uk/repository/handle/10036/3675}}. Here, I shall merely describe how to obtain an output laser beam, of wavelength 400nm. The mirror directly in front of the laser aperture should be raised, so as to protect the sample from the laser until it is configured correctly. The console next to the laser should display 'Standby'. This indicates, of course, the laser is on standby. Pressing and holding the upper-left button on the console switches the laser on, and now the power of the laser is displayed (initially this is '<0.1W'). Wait for around 2 minutes, until the laser outputs 12W. This is the maximum power of the laser, and we are now able to see the red laser beam reflected on to the card next to the laser aperture.
 
-%Switch the Thorlabs S142C power meter on, and adjust the meter so that it measures in units of mW, and reads the intensity of 800nm (red) light. Place the power meter in between the mirror and the black card (so that it interrupts the red beam's path), and rotate the meter until the power incident is maximised. With reference to the order given in Figure 3, adjust the dials on top of the Tsunami Laser until the power recorded is maximised further. From experience, it is recommended that this step be repeated, as this this often provides a further maximisation. With the power now maximised, the power meter can be removed and put aside.
 
-%\begin{figure}
-%\includegraphics[width=0.8\textwidth]{Tsunami_Laser_System.jpg}
-%\caption{Turn the dials in the order A, B, C and D, maximising the power measured.}
-%\label{overflow}
-%\end{figure}
+\subsubsection{Check the pulse shape}
 
 %The oscilloscope above the bench-top should now be switched on. A peak near 800nm, and with a difference of around 10nm, should be readily seen (notice the bench-top should be relatively dark: ambient light will disrupt this reading). Turning the dials on the Tsunami system, labelled $\lambda$ and $\Delta$$\lambda$, will give us a laser beam of 800nm and difference of 13nm. With this setting in place, the frequency of the laser system now needs to be locked to the master clock. Our attention now shifts to the lock-to-clock system.
 
 
-%The frequency on display should be oscillating significantly, around 0.001GHz. A fault has been identified: if this oscillation is not observed, switch the master-clock, the lock-to-clock device, and the photodiode box directly above the lock-to-clock box off. Switch these back on, in the order master-clock, photodiode box, and the lock-to-clock, and the frequency displayed should now be oscillating as expected. Using the up-down arrows, the frequency displayed should be adjusted so it oscillates around 80.00000GHz: once this is achieved, the button to the left of the display should be pressed, thus locking the frequency after around 5s. The laser is now fully operational.
+\subsubsection{Set modelock regime}
+ Using the up-down arrows, the frequency displayed should be adjusted so it oscillates around 80.00000GHz: once this is achieved, the button to the left of the display should be pressed, thus locking the frequency after around 5s. The laser is now fully operational.
 
-%\subsection{Adjusting the laser beam path}
+\subsection{Adjusting the laser beam path}
 
-%Before we manipulate the path of the laser beam across the bench-top, place the silver stand just before the piece of tubing, situated next to the microscope. The mirror in front of the laser aperture can now be lowered, and the blue laser beam should be visible on the silver stand's white paper. If the spot profile is circular, no adjustments need to be made. If however the laser beam is not circular, or not visible at all, the path of the laser beam must be misaligned. To repair this, use a small piece of card to observe the laser beam before it reflects off each individual mirror, and then adjust the mirror accordingly. Obviously, we should intially check the mirror closest to the laser aperture, and then move on to the next one step by step. Best practise also dictates the laser beam should ideally be reflected off the centre of each mirror.
-
-
-%An important consideration is the beam path when the retroreflector is moved. Place the power meter just in front of the silver stand, and configure it so it measures light of 400nm (blue) in mW. Rotate the meter until the incident intensity is a maximum. The power incident on the power meter, and therefore the power meter, can now be varied by roating the neutral density filter (situated after the delay line). {\bf The damage threshold of the photodectors is 4mW}: thus the optical filter should always be rotated such that the beam power is below 3.5mW, before allowing the laser beam to enter the microscope. By opening Internet Explorer, logging on to the url http://192.168.0.254, entering the position for the retroreflector to move to ($\pm$300mm are the limits), setting a velocity 20mm/s, and running the program, we can move the retroreflector from one end of the delay line to the other. After shifting the retroreflector, the laser beam ideally should neither move nor change in intensity. From experience, the laser beam intensity varies by up to 10% when the retroreflector is moved by 60cm, and this is attributed to diffraction.
+Before we manipulate the path of the laser beam across the bench-top, place the silver stand just before the piece of tubing, situated next to the microscope. The mirror in front of the laser aperture can now be lowered, and the blue laser beam should be visible on the silver stand's white paper. If the spot profile is circular, no adjustments need to be made. If however the laser beam is not circular, or not visible at all, the path of the laser beam must be misaligned. To repair this, use a small piece of card to observe the laser beam before it reflects off each individual mirror, and then adjust the mirror accordingly. Obviously, we should intially check the mirror closest to the laser aperture, and then move on to the next one step by step. Best practise also dictates the laser beam should ideally be reflected off the centre of each mirror.
 
 
-%If however the beam moves, a more time-consuming procedure must be followed to correct this. The following procedure was written by Dr. Volodymyr Kruglyak.
 
-%"Let us consider two positions (marked as 1 and 2) of the retroreflector on the translation stage (e.g. at the two opposite ends).
 
 %\begin{figure}
 %\includegraphics[width=0.8\textwidth]{Retroreflector.jpg}
 %\label{overflow}
 %\end{figure}
 
-%The top sketch corresponds to a good alignment: the stage travel strictly parallel to the directions of the beams (it is the key property of the retro-reflector to send the incident beam exactly in the antiparallel direction), and so, the beam hits exactly the same points of the retroreflector in both positions.
-
-%The bottom sketch illustrates what happens when the beam is slightly deviated from the direction of stage’s travel: the beam hits different points of the retroreflector in its different positions on the translation stage, and as a result, the beam gets translated as the stage travels.
 
 %To fix this, you need to do the following: Assuming that the beam is translated away from the axis of the stage as it approaches the input mirror (“M”) – i.e. as shown on the bottom sketch, you need to adjust mirror M so as to deviate the beam even further from the axis when stage is in the furthest position from mirror M."
 
-%\subsection{Positioning the sample/Focussing the laser beam}
 
-%With the laser beam still blocked, the piezo-electric stage can be moved so that the PCB lies directly underneath the objective lens. Open the program "PI Mikromove", and follow these steps:
-
-%\begin{enumerate}
-%\item Highlight the top option displayed, click 'connect', and then 'ok'
-%\item Press 'negative Limit', and then 'start'
-%\item Wait a few seconds until the program has finished running, and then press %'close'
-%\item In the new window that has opened, open the tab 'connections', and click 'new'
-%\item Highlight the remaining axis, and click 'connect'
-%\item Click 'ok', press 'negative limit', 'start', wait until the program stops, and then 'close'
-%\end{enumerate}
-
-%The window that has now opened displays the two axes. Change the step size on both axes to 3mm, and then incrementally move the PCB to 21mm x 21mm. This has centred the PCB.
-
-%We also need to centre the objective lens. Open the program 'Measurement \& Automation Explorer', and double-click "devices" on the left panel. Right click 'device 0' or '1', and communicate with the instrument. We want to communicate with GPIB 15. In this panel, type:
-
-%\begin{itemize}
-%\item Typing '1TP', '2TP' or '3TP' then pressing 'query' returns the position of the PCB in the x-,y- and z- axes.
-%\item Typing '1MAxxx', '2MAxxx' or '3MAxxx', where xxx is a co-ordinate in $\mu$m, and pressing 'write' moves the PCB to the appropiate co-ordinate in the x-, y- or z- axes.
-%\end{itemize}
-
-%Move the objective lens such that it lies directly above the top of the PCB ie. write the commands '1MA150' and '2MA150'.
-
-%We now need to focus the sample. Allow the laser beam to enter the TRSKM apparatus, and push the mirror in between the PCB and the objective lens. With your hands below magnet 1 (which is still pulled out of the circle), carefully raise the PCB towards the objective lens using your left hand. Do not push the PCB in any transverse or longitudinal direction. Once the laser beam is reflected on to the piece of card, such that there are 2 dots visible, carefully raise or lower the PCB until the 2nd dot is strongly concentrated, and use your right hand to turn the dial under the PCB to tighten its position. Switch the tv on next to the display monitor, and you should be able to see a rough surface. If not, again raise or lower the sample until you can see the PCB board in focus on the CCTV monitor.
-
-%Open the window 'PI Mikromove', and now, in increments of 20$\mu$m, move the piezo-electric stage until the structure can be seen on the CCTV monitor. This is mainly done through trial and error. The CCTV monitor can now be switched off, and the mirror above the PCB can be pulled out. The laser beam is now entering the objective lens, and is being collected by the photodetectors.
 
 %\subsection{Taking a reflectivity scan}
 
@@ -317,4 +418,20 @@ Ideally the laser beam goes parallel to the rail of DL, incidents to the corner 
 %Notice the laser usually stops working after around 36 hours of running continuously: this is usually due to natural overheating. The PCB also drifts, due to natural disturbances, and deactivating the laser system obviously deactivates the laser. All these are hazards with running the continuous images, and therefore regular checks should be made, whilst the scans are running, to check everything is running smoothly.
 %\newpage
 
+\section{Miscellaneous}
+
+\subsection{System backup}
+ Folder C:\textbackslash Users \textbackslash User \textbackslash Documents is copied every morning to remote NAS PHY-Magnonocs.  
+ Backup process is organized with ROBOCOPY utilite (see C:\textbackslash Program Files\textbackslash backUp). Please check log file (C:\textbackslash Program Files\textbackslash backup.log) regularly.
+
+\subsection{Output files}
+
+Experimental results are saved in hierarchical *.h5 files (https://en.wikipedia.org/wiki/Hierarchical_Data_Format). An *.h5 file has a tree-like structure, where each branch ("group") has attributes (pair "name:value") and/or leafs. Each leaf is another branch ("group") or dataset (i.e. numerical array).
+
+For instance, result of image scan have
+\begin{figure}
+\includegraphics[width = 0.8\linewidth]{HDF5-format.png}
+\caption{Structure of output HDF file for TR-SCM experiment (scanning mode).}
+\end{figure}
+  
 \end{document}
