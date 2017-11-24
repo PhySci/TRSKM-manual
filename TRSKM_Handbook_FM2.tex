@@ -171,12 +171,10 @@ The bottom sketch illustrates what happens when the beam is slightly deviated fr
 
 \subsection{Connection of mechanical stage}
 
-Make sure that the stage can move without any nuisance (otherwise, you will hurt the stage).
-
-NEVER try to move the mechanical stage manually when it is connected and under control.
+Make sure that the stage can move without any nuisance (otherwise, you will hurt the stage). NEVER try to move the mechanical stage manually when it is connected and under control.
 
 \begin{enumerate}
-\item Make sure that two controllers of the stage are on.
+\item Make sure that both controllers of the stage are on.
 \item Run "PIMicroMove" (Fig.\ref{fig:mStage}a)
 \item Choose proper COM port and press "Connect" (Fig.\ref{fig:mStage}b)
 \item You will see type of the connected stage on the left panel. It should be "M-686.164" (Fig.\ref{fig:mStage}c). (If the left panel is empty, select "M-686.164" on the right panel, press "Assign"). Press "OK".
@@ -216,31 +214,55 @@ NEVER try to move the mechanical stage manually when it is connected and under c
 \label{fig:mStage}
 \end{figure}
 
-
-\subsection{Preliminary work}
-
-Make sure that current passing throw the magnet is zero.
-
-Move away one removable magnet pole.
-
-Connect the mechanical stage 
+\newpage
 
 \subsection{Mounting the sample}
 
 Usually the structure we wish to study lies on a substrate. Typical examples include a permalloy structure mounted on a silicon substrate, or a GaAs structure mounted on a glass substrate. The structure must first be attached to the printed circuit board ({\it PCB}), and to do this, we simply apply sticky-tape. Wearing latex gloves, and preferably with the help of a magnifying glass/angled lamp, the structure should be laid on top of the signal line of the PCB (the PCB consists of ground(yellow)-signal-ground(yellow) lines. The substrate should also be lying fully on the PCB. Care should be taken to ensure this is done correctly - in my personal experience, it has sometimes taken up to an hour to do this.
 \\
 
-A good way to double-check this step has been done correctly is to take a photo of the sample (where you can see it), and then a second photo of the sample lying on the PCB (scratches on the PCB invariably make the structure on the substrate impossible to discern). Using an application as simple as Microsoft Powerpoint gives us a way to verify that the structure is lying on the signal line (see Figure 2) 
+A good way to double-check this step has been done correctly is to take a photo of the sample (where you can see it), and then a second photo of the sample lying on the PCB (scratches on the PCB invariably make the structure on the substrate impossible to discern). Using an application as simple as Microsoft Powerpoint gives us a way to verify that the structure is lying on the signal line (Fig. \ref{fig:fixSample}) 
 
-\begin{figure}
+\begin{figure}[pH]
 \includegraphics[width=0.8\textwidth]{PCB-Signal-line-Sample-Verification.jpg}
 
 \caption{Using Microsfot Powerpoint, we can verify the sample lies on the signal line. We can see the sample in the left photo, but the scratches on the PCB make the sample invisible to the naked eye in the photo on the right. By making a series of reference points (here, we have used lines surrounding the glass), we can copy and paste this overlaying 'net', therefore showing the position of the sample relative to the PCB}
-\label{overflow}
+\label{fig:fixSample}
 \end{figure}
 
 
 With the sample now mounted on the PCB, the PCB can now be dropped on to the piezo-electric stage. After ensuring the magnetic ring is switched off, magnet (1) can be pulled out, breaking the circle. The piezo-electric stage can then be gently pulled towards the space left by magnet (1), and the sample merely dropped in to the slot at the centre of the stage. The two green cables, held in place either side of the stage by two clamps, can then be screwed on to the PCB. These two cables provide the electrical field with which we pump the structure.
+
+\newpage
+
+\subsection{Preliminary work}
+
+
+Make sure that current passing throw the magnet is zero (Fig. \ref{fig:sampleInstall}a).
+
+Move away one removable magnet pole (Fig. \ref{fig:sampleInstall} b-c).
+
+\begin{figure}
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{PSU} \\ a)}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{magnet1} \\ b)}
+\end{minipage}
+\vfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{magnet2} \\ c)}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{magnet1} \\ d)}
+\end{minipage}
+\caption{Sample installation}
+\label{fig:sampleInstall}
+\end{figure}
+
+
 
 
 \subsection{Positioning the sample/Focussing the laser beam}
@@ -433,5 +455,60 @@ For instance, result of image scan have
 \includegraphics[width = 0.8\linewidth]{HDF5-format.png}
 \caption{Structure of output HDF file for TR-SCM experiment (scanning mode).}
 \end{figure}
+
+
+%There are plenty of programs for HDF files. One of the programs is HDFView
+%http://support.hdfgroup.org/ftp/HDF5/hdf-java/current/bin/HDFView-2.14-win_64.zip
+
+\subsubsection{MatLab package installation}
+How to install MatLab package???
+
+https://github.com/PhySci/TRSKM-soft
+
+
+\subsubsection{Raster scan processing}
+
+
+\subsubsection{Time scan processing}
+
+\begin{enumerate}
+\item Create an instance
+
+    ods = Kerr_ODS;
+    
+\item Load an experimental file
+   
+    ods.open()
+    
+As a result, data from the experimental file will be loaded into "ods" object and graphs of Kerr signal and reflectivity will be displayed (Fig. \ref{fig:software1}).
+
+\begin{figure}
+\begin{minipage}{1\linewidth}
+\includegraphics[width = 1\linewidth]{software1} \\a)
+\end{minipage}
+\vfill
+\begin{minipage}{0.5\linewidth}
+\includegraphics[width = 1\linewidth]{software2} \\b)
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\includegraphics[width = 1\linewidth]{software3} \\c)
+\end{minipage}
+\caption{a) Example of time-resolved Kerr signals (left panel) and corresponding reflectivity monitors (right panel). b,c) Content of Kerr_ods object.}.
+\label{fig:software1}
+\end{figure}
+
+Now you can find all experimental data inside "ods" structure (see Fig. \ref{fig:software1} b, c):     
+\begin{itemize}
+\item $fName$ is name of file
+\item $Chanel1$, $Chanel2$ are Kerr rotation signals.
+\item $Monitor1$, $Monitor2$ are reflectivity signals.
+\item $lengthScale$ is a sequence of optical delay line positions.
+\item $timeScale$ is a corresponding sequence of time delay.
+\item $freqScale$ is a corresponding frequency scale (for FFT).
+\item $position$ is X,Y and Z position of the piezostage. 
+\end{itemize}     
+            
+\end{enumerate}
+
   
 \end{document}
