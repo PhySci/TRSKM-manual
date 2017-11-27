@@ -5,6 +5,7 @@
 \usepackage[english]{babel}
 \usepackage{extsizes}
 \usepackage{cmap}
+\usepackage{hyperref}
 
 \usepackage{authblk}
 \renewcommand\Affilfont{\itshape\small}
@@ -256,8 +257,37 @@ Move away one removable magnet pole (Fig. \ref{fig:sampleInstall} b-c).
 \end{minipage}
 \hfill
 \begin{minipage}[h]{0.5\linewidth}
-\center{\includegraphics[width = 1\linewidth]{magnet1} \\ d)}
+\center{\includegraphics[width = 1\linewidth]{mountSample1} \\ d)}
 \end{minipage}
+\vfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample2} \\ c)}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample3} \\ d)}
+\end{minipage}
+\end{figure}
+
+\begin{figure}
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample4} \\ c)}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample5} \\ d)}
+\end{minipage}
+\vfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample6} \\ c)}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample7} \\ d)}
+\end{minipage}
+
+
+
 \caption{Sample installation}
 \label{fig:sampleInstall}
 \end{figure}
@@ -300,7 +330,7 @@ Open the window 'PI Mikromove', and now, in increments of 20$\mu$m, move the pie
 
 \subsection{Configuring the laser}
 
-The workings of the Tsunami laser system has been described well in the Doctoral Thesis presented by Toby Davison\footnote{url{https://eric.exeter.ac.uk/repository/handle/10036/3675}}. Here, I shall merely describe how to obtain an output laser beam, of wavelength 400nm. The mirror directly in front of the laser aperture should be raised, so as to protect the sample from the laser until it is configured correctly. The console next to the laser should display 'Standby'. This indicates, of course, the laser is on standby. Pressing and holding the upper-left button on the console switches the laser on, and now the power of the laser is displayed (initially this is '<0.1W'). Wait for around 2 minutes, until the laser outputs 12W. This is the maximum power of the laser, and we are now able to see the red laser beam reflected on to the card next to the laser aperture.
+The workings of the Tsunami laser system has been described well in the Doctoral Thesis presented by Toby Davison\footnote{\url{https://eric.exeter.ac.uk/repository/handle/10036/3675}}. Here, I shall merely describe how to obtain an output laser beam, of wavelength 400nm. The mirror directly in front of the laser aperture should be raised, so as to protect the sample from the laser until it is configured correctly. The console next to the laser should display 'Standby'. This indicates, of course, the laser is on standby. Pressing and holding the upper-left button on the console switches the laser on, and now the power of the laser is displayed (initially this is '<0.1W'). Wait for around 2 minutes, until the laser outputs 12W. This is the maximum power of the laser, and we are now able to see the red laser beam reflected on to the card next to the laser aperture.
 
 
 \subsubsection{Check the pulse shape}
@@ -450,11 +480,16 @@ Before we manipulate the path of the laser beam across the bench-top, place the 
 
 Experimental results are saved in hierarchical *.h5 files (https://en.wikipedia.org/wiki/Hierarchical_Data_Format). An *.h5 file has a tree-like structure, where each branch ("group") has attributes (pair "name:value") and/or leafs. Each leaf is another branch ("group") or dataset (i.e. numerical array).
 
-For instance, result of image scan have
 \begin{figure}
 \includegraphics[width = 0.8\linewidth]{HDF5-format.png}
 \caption{Structure of output HDF file for TR-SCM experiment (scanning mode).}
 \end{figure}
+
+\begin{figure}
+\includegraphics[width = 0.8\linewidth]{HDF5-format2.png}
+\caption{Structure of output HDF file for TR-SCM experiment (time-resolved mode).}
+\end{figure}
+
 
 
 %There are plenty of programs for HDF files. One of the programs is HDFView
@@ -466,10 +501,10 @@ How to install MatLab package???
 https://github.com/PhySci/TRSKM-soft
 
 
-\subsubsection{Raster scan processing}
+\subsubsection{Raster scan signal}
 
 
-\subsubsection{Time scan processing}
+\subsubsection{Time scan signal}
 
 \begin{enumerate}
 \item Create an instance
@@ -507,8 +542,20 @@ Now you can find all experimental data inside "ods" structure (see Fig. \ref{fig
 \item $freqScale$ is a corresponding frequency scale (for FFT).
 \item $position$ is X,Y and Z position of the piezostage. 
 \end{itemize}     
-            
 \end{enumerate}
 
+Class $Kerr\_ODS$ has a few method for post-processing plotting of experimental results:
+\begin{itemize}
+\item $plotKerr$ shows Kerr signal;
+\item $plotMonitors$ shows reflectivity (monitors);
+\item $scanFolder$ reads all files in the folder, calculates and averages FFT for them (obsolete).
+\end{itemize} 
+
+Very often, raw signal needs be rotated in complex plane thus to put all useful signal into one channel. You are welcome to use "phaser" MatLab script which  has graphical user interface\footnote{\url{https://github.com/PhySci/TRSKM-soft/tree/master/phaser}}. Ask me or VVK about idea of the rotation (or probably I will add description).
+ 
+ \begin{figure}
+\includegraphics[width = 0.8\linewidth]{phaser}
+\caption{Rotation of signal's phase using script "phaser".}
+\end{figure}
   
 \end{document}
