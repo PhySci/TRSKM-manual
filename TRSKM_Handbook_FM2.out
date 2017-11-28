@@ -10,17 +10,16 @@
 \BOOKMARK [1][-]{section.8}{Sample installation}{}% 10
 \BOOKMARK [2][-]{subsection.8.1}{Connection of mechanical stage}{section.8}% 11
 \BOOKMARK [2][-]{subsection.8.2}{Mounting the sample}{section.8}% 12
-\BOOKMARK [2][-]{subsection.8.3}{Preliminary work}{section.8}% 13
-\BOOKMARK [2][-]{subsection.8.4}{Positioning the sample/Focussing the laser beam}{section.8}% 14
-\BOOKMARK [1][-]{section.9}{Pulse measurement}{}% 15
-\BOOKMARK [1][-]{section.10}{CW measurement}{}% 16
-\BOOKMARK [2][-]{subsection.10.1}{Configuring the laser}{section.10}% 17
-\BOOKMARK [3][-]{subsubsection.10.1.1}{Check the pulse shape}{subsection.10.1}% 18
-\BOOKMARK [3][-]{subsubsection.10.1.2}{Set modelock regime}{subsection.10.1}% 19
-\BOOKMARK [2][-]{subsection.10.2}{Adjusting the laser beam path}{section.10}% 20
-\BOOKMARK [1][-]{section.11}{Miscellaneous}{}% 21
-\BOOKMARK [2][-]{subsection.11.1}{System backup}{section.11}% 22
-\BOOKMARK [2][-]{subsection.11.2}{Output files}{section.11}% 23
-\BOOKMARK [3][-]{subsubsection.11.2.1}{MatLab package installation}{subsection.11.2}% 24
-\BOOKMARK [3][-]{subsubsection.11.2.2}{Raster scan signal}{subsection.11.2}% 25
-\BOOKMARK [3][-]{subsubsection.11.2.3}{Time scan signal}{subsection.11.2}% 26
+\BOOKMARK [2][-]{subsection.8.3}{Positioning the sample/Focussing the laser beam}{section.8}% 13
+\BOOKMARK [1][-]{section.9}{Pulse measurement}{}% 14
+\BOOKMARK [1][-]{section.10}{CW measurement}{}% 15
+\BOOKMARK [2][-]{subsection.10.1}{Configuring the laser}{section.10}% 16
+\BOOKMARK [3][-]{subsubsection.10.1.1}{Check the pulse shape}{subsection.10.1}% 17
+\BOOKMARK [3][-]{subsubsection.10.1.2}{Set modelock regime}{subsection.10.1}% 18
+\BOOKMARK [2][-]{subsection.10.2}{Adjusting the laser beam path}{section.10}% 19
+\BOOKMARK [1][-]{section.11}{Miscellaneous}{}% 20
+\BOOKMARK [2][-]{subsection.11.1}{System backup}{section.11}% 21
+\BOOKMARK [2][-]{subsection.11.2}{Output files}{section.11}% 22
+\BOOKMARK [3][-]{subsubsection.11.2.1}{MatLab package installation}{subsection.11.2}% 23
+\BOOKMARK [3][-]{subsubsection.11.2.2}{Raster scan signal}{subsection.11.2}% 24
+\BOOKMARK [3][-]{subsubsection.11.2.3}{Time scan signal}{subsection.11.2}% 25

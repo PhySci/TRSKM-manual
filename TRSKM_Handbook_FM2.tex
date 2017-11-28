@@ -82,6 +82,8 @@ Adjust the dials on top of the Tsunami Laser until the power recorded is maximis
 \label{fig:laser_walking}
 \end{figure}
 
+\newpage
+
 \section{Optical alignment}
 Optical alignment is the most important part of the experimental work and main condition of robust and repeatable measurements.
 
@@ -231,17 +233,35 @@ A good way to double-check this step has been done correctly is to take a photo 
 \label{fig:fixSample}
 \end{figure}
 
-
-With the sample now mounted on the PCB, the PCB can now be dropped on to the piezo-electric stage. After ensuring the magnetic ring is switched off, magnet (1) can be pulled out, breaking the circle. The piezo-electric stage can then be gently pulled towards the space left by magnet (1), and the sample merely dropped in to the slot at the centre of the stage. The two green cables, held in place either side of the stage by two clamps, can then be screwed on to the PCB. These two cables provide the electrical field with which we pump the structure.
-
 \newpage
 
-\subsection{Preliminary work}
+\subsection{Positioning the sample/Focussing the laser beam}
 
+\begin{enumerate}
+\item Make sure that current passing throw the magnet is zero (Fig. \ref{fig:sampleInstall}a).
 
-Make sure that current passing throw the magnet is zero (Fig. \ref{fig:sampleInstall}a).
+\item Pull off one removable magnet pole (Fig. \ref{fig:sampleInstall} b-c).
 
-Move away one removable magnet pole (Fig. \ref{fig:sampleInstall} b-c).
+\item Fasten an RF terminator and a post (not sure it's proper name for these cylinders with collar) to the sample holder (Fig.  \ref{fig:sampleInstall} d-f)
+
+\item Carefully move the mechanical (bottom) stage close to the open part of the magnet. To do this, use control panel of the stage and set position (25, 0) (Fig. \ref{fig:sampleInstall2}a). Do not try to move the stage with hands if the stage is under control!!!
+ 
+\item Thrust the sample holder in to the slot at the centre of the stage. Connect the RF cable to the vacant SMA connector of the sampleholder (Fig. \ref{fig:sampleInstall2} b).
+
+\item Carefully move the the sample under the objective lens. To do this, open control panel of the stage and follow to the new target coordinates. Roughly, desired position is around (5, 20). (Fig. \ref{fig:sampleInstall2} c, d).  
+ 
+\item Raise the sample holder thus to leave a small gap between the objective lens and the sample, tight the black screw in order to fix the sample holder (Fig. \ref{fig:sampleInstall2} e).
+
+\item Check that you can turn the collar on the sample holder and precisely ascent or descent the sample   
+
+\item Move the objective lens such that it lies directly above the top of the PCB ie. write the commands '1MA150' and '2MA150'.
+
+\item We now need to focus the sample. Allow the laser beam to enter the TRSKM apparatus, and push the mirror in between the PCB and the objective lens. With your hands below magnet 1 (which is still pulled out of the circle), carefully raise the PCB towards the objective lens using your left hand. Do not push the PCB in any transverse or longitudinal direction. Once the laser beam is reflected on to the piece of card, such that there are 2 dots visible, carefully raise or lower the PCB until the 2nd dot is strongly concentrated. Switch the TV on next to the display monitor, and you should be able to see a rough surface. If not, again raise or lower the sample until you can see the PCB board in focus on the CCTV monitor.
+
+\item Open the window 'PI Mikromove', and now, in increments of 20$\mu$m, move the piezo-electric stage until the structure can be seen on the CCTV monitor. This is mainly done through trial and error. The CCTV monitor can now be switched off, and the mirror above the PCB can be pulled out. The laser beam is now entering the objective lens, and is being collected by the photodetectors.
+   
+\end{enumerate}
+
 
 \begin{figure}
 \begin{minipage}[h]{0.5\linewidth}
@@ -261,67 +281,85 @@ Move away one removable magnet pole (Fig. \ref{fig:sampleInstall} b-c).
 \end{minipage}
 \vfill
 \begin{minipage}[h]{0.5\linewidth}
-\center{\includegraphics[width = 1\linewidth]{mountSample2} \\ c)}
+\center{\includegraphics[width = 1\linewidth]{mountSample2} \\ e)}
 \end{minipage}
 \hfill
 \begin{minipage}[h]{0.5\linewidth}
-\center{\includegraphics[width = 1\linewidth]{mountSample3} \\ d)}
+\center{\includegraphics[width = 1\linewidth]{mountSample3} \\ f)}
+\caption{Sample installation}
+\label{fig:sampleInstall}
 \end{minipage}
 \end{figure}
+
+
 
 \begin{figure}
 \begin{minipage}[h]{0.5\linewidth}
-\center{\includegraphics[width = 1\linewidth]{mountSample4} \\ c)}
+\center{\includegraphics[width = 1\linewidth]{mountSample4} \\ a)}
 \end{minipage}
 \hfill
 \begin{minipage}[h]{0.5\linewidth}
-\center{\includegraphics[width = 1\linewidth]{mountSample5} \\ d)}
+\center{\includegraphics[width = 1\linewidth]{mountSample5} \\ b)}
 \end{minipage}
 \vfill
-\begin{minipage}[h]{0.5\linewidth}
+\begin{minipage}[h]{0.55\linewidth}
 \center{\includegraphics[width = 1\linewidth]{mountSample6} \\ c)}
 \end{minipage}
 \hfill
-\begin{minipage}[h]{0.5\linewidth}
+\begin{minipage}[h]{0.3\linewidth}
 \center{\includegraphics[width = 1\linewidth]{mountSample7} \\ d)}
 \end{minipage}
-
-
+\vfill
+\begin{minipage}[h]{0.3\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample8} \\ e)}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.55\linewidth}
+\center{\includegraphics[width = 1\linewidth]{mountSample9} \\ f)}
+\end{minipage}
 
 \caption{Sample installation}
-\label{fig:sampleInstall}
+\label{fig:sampleInstall2}
 \end{figure}
 
 
+%\begin{figure}
+%\begin{minipage}[h]{0.5\linewidth}
+%\center{\includegraphics[width = 1\linewidth]{mountSample10} \\ a)}
+%\end{minipage}
+%\hfill
+%\begin{minipage}[h]{0.5\linewidth}
+%\center{\includegraphics[width = 1\linewidth]{mountSample10} \\ b)}
+%\end{minipage}
+%\vfill
+%\caption{Sample installation}
+%\label{fig:sampleInstall3}
+%\end{figure}
 
 
-\subsection{Positioning the sample/Focussing the laser beam}
+
 
 %With the laser beam still blocked, the piezo-electric stage can be moved so that the PCB lies directly underneath the objective lens. Open the program "PI Mikromove", and follow these steps:
 
-\begin{enumerate}
-\item Highlight the top option displayed, click 'connect', and then 'ok'
-\item Press 'negative Limit', and then 'start'
-\item Wait a few seconds until the program has finished running, and then press %'close'
-\item In the new window that has opened, open the tab 'connections', and click 'new'
-\item Highlight the remaining axis, and click 'connect'
-\item Click 'ok', press 'negative limit', 'start', wait until the program stops, and then 'close'
-\end{enumerate}
+%\begin{enumerate}
+%\item Highlight the top option displayed, click 'connect', and then 'ok'
+%\item Press 'negative Limit', and then 'start'
+%\item Wait a few seconds until the program has finished running, and then press %'close'
+%\item In the new window that has opened, open the tab 'connections', and click 'new'
+%\item Highlight the remaining axis, and click 'connect'
+%\item Click 'ok', press 'negative limit', 'start', wait until the program stops, and then 'close'
+%\end{enumerate}
 
-The window that has now opened displays the two axes. Change the step size on both axes to 3mm, and then incrementally move the PCB to 21mm x 21mm. This has centred the PCB.
+%The window that has now opened displays the two axes. Change the step size on both axes to 3mm, and then incrementally move the PCB to 21mm x 21mm. This has centred the PCB.
 
-We also need to centre the objective lens. Open the program 'Measurement \& Automation Explorer', and double-click "devices" on the left panel. Right click 'device 0' or '1', and communicate with the instrument. We want to communicate with GPIB 15. In this panel, type:
+%We also need to centre the objective lens. Open the program 'Measurement \& Automation Explorer', and double-click "devices" on the left panel. Right click 'device 0' or '1', and communicate with the instrument. We want to communicate with GPIB 15. In this panel, type:
 
-\begin{itemize}
-\item Typing '1TP', '2TP' or '3TP' then pressing 'query' returns the position of the PCB in the x-,y- and z- axes.
-\item Typing '1MAxxx', '2MAxxx' or '3MAxxx', where xxx is a co-ordinate in $\mu$m, and pressing 'write' moves the PCB to the appropiate co-ordinate in the x-, y- or z- axes.
-\end{itemize}
+%\begin{itemize}
+%\item Typing '1TP', '2TP' or '3TP' then pressing 'query' returns the position of the PCB in the x-,y- and z- axes.
+%\item Typing '1MAxxx', '2MAxxx' or '3MAxxx', where xxx is a co-ordinate in $\mu$m, and pressing 'write' moves the PCB to the appropiate co-ordinate in the x-, y- or z- axes.
+%\end{itemize}
 
-Move the objective lens such that it lies directly above the top of the PCB ie. write the commands '1MA150' and '2MA150'.
-
-We now need to focus the sample. Allow the laser beam to enter the TRSKM apparatus, and push the mirror in between the PCB and the objective lens. With your hands below magnet 1 (which is still pulled out of the circle), carefully raise the PCB towards the objective lens using your left hand. Do not push the PCB in any transverse or longitudinal direction. Once the laser beam is reflected on to the piece of card, such that there are 2 dots visible, carefully raise or lower the PCB until the 2nd dot is strongly concentrated, and use your right hand to turn the dial under the PCB to tighten its position. Switch the tv on next to the display monitor, and you should be able to see a rough surface. If not, again raise or lower the sample until you can see the PCB board in focus on the CCTV monitor.
-
-Open the window 'PI Mikromove', and now, in increments of 20$\mu$m, move the piezo-electric stage until the structure can be seen on the CCTV monitor. This is mainly done through trial and error. The CCTV monitor can now be switched off, and the mirror above the PCB can be pulled out. The laser beam is now entering the objective lens, and is being collected by the photodetectors.
+\newpage
 
 \section{Pulse measurement}
 
